@@ -1,0 +1,7 @@
+name = "TrajectoryTools"
+uuid = "9ccad825-6289-4415-a6ee-74c853e7b03c"
+authors = ["Roger Herikstad <roger.herikstad@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
