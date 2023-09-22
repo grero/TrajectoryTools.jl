@@ -178,4 +178,20 @@ function get_ref_pairwise_distance(X::Array{T,3}, qidx::Matrix{Int64}) where T <
 	end
 	D./nc
 end
+"""
+    compute_speed(X::Array{T,3}, qidx::Matrix{Flaot64}) where T <: Real
+
+Compute average speed using the transition points `qidx`
+"""
+function compute_speed(X::Array{T,3}, qidx::Matrix{Int64}) where T <: Real
+	nb, nt,nc = size(X)
+    ss = fill(0.0, nt)
+    for i in 1:nt 
+		qq = qidx[:,i]
+		_X = X[qq[1]:qq[2],i,:] 
+        ss[i] = mean(sqrt.(sum(abs2, diff(_X,dims=1),dims=2)))
+    end
+    ss
+end
+
 end # module TrajectoryTools
