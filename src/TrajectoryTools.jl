@@ -1,4 +1,5 @@
 module TrajectoryTools
+using StatsBase
 
 """
 ```julia
